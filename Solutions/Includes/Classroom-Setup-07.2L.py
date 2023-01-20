@@ -10,4 +10,3 @@ DA.init()
 sqlContext.setConf("spark.sql.shuffle.partitions", spark.sparkContext.defaultParallelism)
 
 DA.conclude_setup()
-

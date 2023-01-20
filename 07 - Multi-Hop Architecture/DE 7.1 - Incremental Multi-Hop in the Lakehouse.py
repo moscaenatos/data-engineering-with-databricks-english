@@ -116,10 +116,14 @@ DA.data_factory.load()
 (spark.readStream
     .format("cloudFiles")
     .option("cloudFiles.format", "json")
-    .option("cloudFiles.schemaHints", "time DOUBLE")
-    .option("cloudFiles.schemaLocation", f"{DA.paths.checkpoints}/bronze")
+    .option("cloudFiles.schemaHints", "time DOUBLE") # it tries to cast the whole column as double, but it does not enforce it
+    .option("cloudFiles.schemaLocation", f"{DA.paths.checkpoints}/bronze") # this is the destination where the schema is going to be pushed
     .load(DA.paths.data_landing_location)
-    .createOrReplaceTempView("recordings_raw_temp"))
+    .createOrReplaceTempView("recordings_raw_temp")) 
+
+# COMMAND ----------
+
+print(f"{DA.paths.checkpoints}/bronze")
 
 # COMMAND ----------
 
@@ -177,7 +181,7 @@ DA.data_factory.load()
 
 (spark.read
       .format("csv")
-      .schema("mrn STRING, name STRING")
+      .schema("mrn STRING, name STRING") # this is proper schema enforcement
       .option("header", True)
       .load(f"{DA.paths.datasets}/healthcare/patient/patient_info.csv")
       .createOrReplaceTempView("pii"))
@@ -186,6 +190,11 @@ DA.data_factory.load()
 
 # MAGIC %sql
 # MAGIC SELECT * FROM pii
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC DESCRIBE EXTENDED pii
 
 # COMMAND ----------
 

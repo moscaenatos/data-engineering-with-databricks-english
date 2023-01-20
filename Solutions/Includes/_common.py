@@ -163,4 +163,3 @@ class DltDataFactory:
 
             dbutils.fs.cp(f"{self.source}/{curr_file}", target_dir)
             self.curr_mo += 1
-

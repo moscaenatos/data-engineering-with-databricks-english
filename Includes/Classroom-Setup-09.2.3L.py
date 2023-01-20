@@ -10,4 +10,3 @@ DA = DBAcademyHelper(course_config, lesson_config)
 # DA.reset_lesson() # We don't want to reset the environment
 DA.init()
 DA.conclude_setup()
-

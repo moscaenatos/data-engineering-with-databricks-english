@@ -195,7 +195,7 @@ DESCRIBE DETAIL students
 -- COMMAND ----------
 
 -- MAGIC %python
--- MAGIC display(spark.sql(f"SELECT * FROM json.`{DA.paths.user_db}/students/_delta_log/00000000000000000007.json`"))
+-- MAGIC display(spark.sql(f"SELECT * FROM json.`{DA.paths.user_db}/students/_delta_log/00000000000000000006.json`"))
 
 -- COMMAND ----------
 
@@ -262,7 +262,7 @@ DESCRIBE HISTORY students
 -- COMMAND ----------
 
 SELECT * 
-FROM students VERSION AS OF 3
+FROM students VERSION AS OF 1
 
 -- COMMAND ----------
 
@@ -283,6 +283,15 @@ FROM students VERSION AS OF 3
 -- COMMAND ----------
 
 DELETE FROM students
+
+-- COMMAND ----------
+
+DESCRIBE HISTORY students
+
+-- COMMAND ----------
+
+SELECT * 
+FROM students VERSION AS OF 8
 
 -- COMMAND ----------
 
@@ -307,6 +316,10 @@ SELECT * FROM students
 -- COMMAND ----------
 
 RESTORE TABLE students TO VERSION AS OF 8 
+
+-- COMMAND ----------
+
+SELECT * FROM students
 
 -- COMMAND ----------
 

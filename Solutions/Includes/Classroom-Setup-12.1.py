@@ -118,4 +118,3 @@ ORDER BY user_id ASC;
 """)
     
 DA.generate_summary = _generate_summary
-

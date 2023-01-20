@@ -19,4 +19,3 @@ DA = DBAcademyHelper(course_config=course_config,
 DA.reset_lesson()
 DA.init()
 DA.conclude_setup()
-

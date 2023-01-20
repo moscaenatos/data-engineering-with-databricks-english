@@ -35,4 +35,3 @@ DA.init()
 DA.create_demo_tmp_vw()                  
 
 DA.conclude_setup()
-

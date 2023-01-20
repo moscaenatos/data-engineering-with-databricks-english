@@ -126,4 +126,3 @@ USE {self.get_their_db(their_username)};
 DELETE FROM beans
     """)
 
-

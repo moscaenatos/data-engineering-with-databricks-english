@@ -331,6 +331,15 @@ DEEP CLONE purchases
 
 -- COMMAND ----------
 
+DESCRIBE EXTENDED purchases_clone;
+
+-- COMMAND ----------
+
+
+DESCRIBE EXTENDED purchases;
+
+-- COMMAND ----------
+
 -- MAGIC %md <i18n value="a42c51a7-ac07-4e67-94ea-ed06b6db126c"/>
 -- MAGIC 
 -- MAGIC 
@@ -342,6 +351,14 @@ DEEP CLONE purchases
 
 CREATE OR REPLACE TABLE purchases_shallow_clone
 SHALLOW CLONE purchases
+
+-- COMMAND ----------
+
+DESCRIBE EXTENDED purchases_shallow_clone;
+
+-- COMMAND ----------
+
+VACUUM purchases_shallow_clone;
 
 -- COMMAND ----------
 
@@ -369,7 +386,7 @@ SHALLOW CLONE purchases
 -- COMMAND ----------
 
 -- MAGIC %python 
--- MAGIC DA.cleanup()
+-- MAGIC #DA.cleanup()
 
 -- COMMAND ----------
 

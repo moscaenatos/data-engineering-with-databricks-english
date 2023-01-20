@@ -50,7 +50,9 @@ customers_checkpoint_path = f"{DA.paths.checkpoints}/customers"
 
 (spark
   .readStream
-  <FILL-IN>
+  .format("cloudFiles")
+  .option("cloudFiles.format", "csv")
+  .option("cloudFiles.schemaLocation", customers_checkpoint_path)
   .load(dataset_source)
   .createOrReplaceTempView("customers_raw_temp"))
 

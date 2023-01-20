@@ -59,4 +59,3 @@ DA.data_factory.load()
 sqlContext.setConf("spark.sql.shuffle.partitions", spark.sparkContext.defaultParallelism)
 
 DA.conclude_setup()
-

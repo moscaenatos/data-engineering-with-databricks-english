@@ -355,4 +355,3 @@ DA.paths.storage_location = f"{DA.paths.working_dir}/storage"
 DA.data_factory = DltDataFactory(DA.paths.stream_path)
 
 DA.conclude_setup()
-

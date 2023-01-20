@@ -65,7 +65,7 @@ SELECT * FROM external_table;
 
 -- COMMAND ----------
 
-SHOW TABLES;
+SHOW TABLES; 
 
 -- COMMAND ----------
 

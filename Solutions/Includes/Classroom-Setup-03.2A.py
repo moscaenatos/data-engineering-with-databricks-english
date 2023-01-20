@@ -13,4 +13,3 @@ for row in spark.sql("SHOW TABLES IN global_temp").select("tableName").collect()
     spark.sql(f"DROP TABLE global_temp.{table_name}")
 
 DA.conclude_setup()
-

@@ -17,4 +17,3 @@ DA.clone_source_table("users_update", f"{DA.paths.datasets}/ecommerce/delta")
 DA.clone_source_table("events_update", f"{DA.paths.datasets}/ecommerce/delta")
 
 DA.conclude_setup()
-

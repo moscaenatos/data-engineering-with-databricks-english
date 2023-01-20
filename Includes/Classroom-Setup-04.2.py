@@ -46,4 +46,3 @@ print(f"({int(time.time())-start} seconds / {total:,} records)")
 # COMMAND ----------
 
 DA.conclude_setup()
-

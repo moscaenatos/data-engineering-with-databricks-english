@@ -16,4 +16,3 @@ DA.clone_source_table("events_raw", f"{DA.paths.datasets}/ecommerce/delta")
 DA.clone_source_table("item_lookup", f"{DA.paths.datasets}/ecommerce/delta")
 
 DA.conclude_setup()
-

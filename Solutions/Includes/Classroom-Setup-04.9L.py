@@ -14,4 +14,3 @@ DA.clone_source_table("users", f"{DA.paths.datasets}/ecommerce/delta")
 DA.clone_source_table("transactions", f"{DA.paths.datasets}/ecommerce/delta")
 
 DA.conclude_setup()
-

@@ -164,7 +164,7 @@ block_until_stream_is_ready(query)
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC DESCRIBE TABLE target_table
+# MAGIC DESCRIBE EXTENDED  target_table
 
 # COMMAND ----------
 
@@ -174,6 +174,16 @@ block_until_stream_is_ready(query)
 # MAGIC Use the cell below to define a temporary view that summarizes the recordings in our target table.
 # MAGIC 
 # MAGIC We'll use this view below to demonstrate how new data is automatically ingested with Auto Loader.
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC CREATE OR REPLACE TEMP VIEW device_counts AS
+# MAGIC   SELECT device_id, count(*) total_recordings
+# MAGIC   FROM target_table
+# MAGIC   GROUP BY device_id;
+# MAGIC   
+# MAGIC SELECT * FROM device_counts
 
 # COMMAND ----------
 

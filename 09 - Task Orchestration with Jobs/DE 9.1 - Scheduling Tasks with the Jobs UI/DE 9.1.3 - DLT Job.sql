@@ -55,4 +55,3 @@ FROM (
   WHERE city = 'Chicago'
   )
 GROUP BY order_date, city, customer_id, customer_name, ordered_products_explode.curr
-

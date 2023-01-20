@@ -152,6 +152,27 @@
 
 # COMMAND ----------
 
+# MAGIC %sql
+# MAGIC SELECT AVG("device_id") AS mean FROM streaming_tmp_vw
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC SELECT * FROM streaming_tmp_vw
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC CREATE OR REPLACE TEMP VIEW mean_infinite AS
+# MAGIC SELECT AVG("96.2296475916") AS mean FROM streaming_tmp_vw
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC SELECT * from mean_infinite
+
+# COMMAND ----------
+
 # MAGIC %md <i18n value="147067e0-bb54-4556-849f-00b9710e7c48"/>
 # MAGIC 
 # MAGIC 

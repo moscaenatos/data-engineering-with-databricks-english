@@ -8,4 +8,3 @@ lesson_config.create_schema = False
 DA = DBAcademyHelper(course_config, lesson_config)
 DA.init()
 DA.print_copyrights()
-

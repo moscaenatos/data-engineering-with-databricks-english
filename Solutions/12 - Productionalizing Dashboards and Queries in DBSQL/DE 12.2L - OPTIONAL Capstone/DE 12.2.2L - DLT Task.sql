@@ -30,4 +30,3 @@ CREATE OR REFRESH STREAMING LIVE TABLE daily_patient_avg
 AS SELECT mrn, name, MEAN(heartrate) avg_heartrate, DATE(time) `date`
   FROM STREAM(live.recordings_enriched)
   GROUP BY mrn, name, DATE(time)
-
